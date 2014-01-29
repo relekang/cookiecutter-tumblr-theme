@@ -1,0 +1,11 @@
+{
+    "full_name": "Rolf Erik Lekang",
+    "email": "me@rolflekang.com",
+    "github_username": "relekang",
+    "project_name": "Tumblr theme",
+    "repo_name": "tumblr-theme",
+    "project_short_description": "A template for creating a Tumblr theme with a GruntJS build process",
+    "release_date": "2014-01-29",
+    "year": "2014",
+    "version": "0.1.0"
+}
