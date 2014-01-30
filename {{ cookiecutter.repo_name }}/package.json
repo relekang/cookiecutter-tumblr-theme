@@ -1,0 +1,11 @@
+{
+  "name": "{{ cookiecutter.repo_name }}",
+  "version": "{{ cookiecutter.version }}",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-html-build": "~0.2.2",
+    "grunt-bower-task": "~0.3.4"
+  }
+}
