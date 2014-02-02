@@ -14,30 +14,32 @@ module.exports = function (grunt) {
     htmlbuild: {
       dist: {
         src: 'src/tumblr.html',
-        dest: 'tumblr.html',
+        dest: 'dist/tumblr.html',
         options: {
           styles: {
-            libs: [
-              'libs/bootstrap.css',
-            ],
             main: ['dist/main.css'] 
           },
-          scripts: {
-            minified: 'dist/<%= pkg.name %>.min.js'
-          }
         },
+      }
+    },
+    exec: {
+      copy_template: {
+        command: 'cat dist/tumblr.html | pbcopy'
+      },
+      cleanup: {
+        command: 'rm -r dist'
       }
     },
     watch: {
       files: ['src/tumblr.html', 'src/main.less'],
-      tasks: ['less', 'htmlbuild']
+      tasks: ['less', 'htmlbuild', 'exec']
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-html-build');
-  grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-exec');
 
-  grunt.registerTask('default', ['less', 'htmlbuild']);
+  grunt.registerTask('default', ['less', 'htmlbuild', 'exec']);
 };
